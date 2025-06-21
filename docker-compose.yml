@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   back:
-    build: ./back
+    image: bouzalmat/back
     container_name: back
     ports:
       - "8000:8000"
@@ -10,7 +10,7 @@ services:
       - db
 
   front:
-    build: ./front
+    image: abdooch/front
     container_name: front
     ports:
       - "5173:80"

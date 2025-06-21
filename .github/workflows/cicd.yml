@@ -161,7 +161,7 @@ jobs:
           password: ${{ secrets.DOCKER_FRONT_PASSWORD }}
 
       - name: Push frontend image
-        run: docker push ${{ secrets.DOCKER_FRONT_USER }}/front
+        run: docker push ${{ secrets.DOCKER_FRONT_USER }}/front:latest
 
       - name: Login to back Docker Hub
         uses: docker/login-action@v2
@@ -170,4 +170,4 @@ jobs:
           password: ${{ secrets.DOCKER_BACK_PASSWORD }}
 
       - name: Push backend image
-        run: docker push ${{ secrets.DOCKER_BACK_USER }}/back
+        run: docker push ${{ secrets.DOCKER_BACK_USER }}/back:latest

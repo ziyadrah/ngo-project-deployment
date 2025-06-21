@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  back:
+    build: ./back
+    container_name: back
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  front:
+    build: ./front
+    container_name: front
+    ports:
+      - "5173:80"
+
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db_aides
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

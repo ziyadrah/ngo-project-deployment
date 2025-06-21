@@ -131,7 +131,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build backend Docker image
-        run: docker build -t ${{ secrets.DOCKER_BACK_USER }}/back
+        run: docker build -t ${{ secrets.DOCKER_BACK_USER }}/back:latest back/
 
   frontend-build:
     runs-on: ubuntu-latest
@@ -147,7 +147,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build frontend Docker image
-        run: docker build -t ${{ secrets.DOCKER_FRONT_USER }}/front
+        run: docker build -t ${{ secrets.DOCKER_FRONT_USER }}/front:latest front/
 
   docker-push:
     runs-on: ubuntu-latest

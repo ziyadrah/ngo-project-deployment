@@ -81,7 +81,7 @@ jobs:
 
       - name: Install lint tools
         working-directory: front
-        run: npm ci
+        run: npm intall
 
       - name: Run ESLint
         working-directory: front
@@ -110,7 +110,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: front
-        run: npm ci
+        run: npm install
 
       - name: Run Vitest
         working-directory: front

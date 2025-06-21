@@ -81,7 +81,7 @@ jobs:
 
       - name: Install lint tools
         working-directory: front
-        run: npm intall
+        run: npm install
 
       - name: Run ESLint
         working-directory: front
